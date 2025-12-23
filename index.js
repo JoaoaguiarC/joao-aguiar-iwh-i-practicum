@@ -69,9 +69,9 @@ app.post("/update-cobj", async (req, res) => {
         properties: {
           // Estes nomes DEVEM ser os INTERNAL NAMES
           // das propriedades do Custom Object (***SUBSTITUIR PELO OS QUE VOCÊ CRIOU***)
-          name: customer_name,
-          status: status,
-          LFR: last_feedback_response,
+          name: customer_name ,
+          status: status ,
+          LFR: last_feedback_response ,
         },
       },
       {
@@ -98,7 +98,7 @@ app.get("/", async (req, res) => {
   try {
     // Busca registros do Custom Object (***SUBSTITUIR NO FINAL DA URL PELO OS QUE VOCÊ CRIOU***)
     const response = await axios.get(
-      `https://api.hubapi.com/crm/v3/objects/${CUSTOM_OBJECT}?properties=name,status,LFR`,
+      `https://api.hubapi.com/crm/v3/objects/${CUSTOM_OBJECT}?properties=customer_name,status,last_feedback_response`,
       {
         headers: {
           Authorization: `Bearer ${HUBSPOT_TOKEN}`,
