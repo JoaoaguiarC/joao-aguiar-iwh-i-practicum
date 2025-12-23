@@ -57,9 +57,9 @@ app.get("/update-cobj", (req, res) => {
 // ------------------------------------------------------------
 app.post("/update-cobj", async (req, res) => {
   // Dados vindos do formulário (***SUBSTITUIR PELAS PROPRIEDADES QUE VOCÊ CRIOU***)
-  const customer_name = Array.isArray(req.body.name) ? req.body.name[0] : req.body.name;
-  const status = Array.isArray(req.body.specie) ? req.body.specie[0] : req.body.specie;
-  const last_feedback_response = Array.isArray(req.body.age) ? req.body.age[0] : req.body.age;
+  const customer_name = req.body.customer_name;
+  const status = req.body.status;
+  const last_feedback_response = req.body.last_feedback_response;
 
   try {
     // Chamada à API do HubSpot para criar um registro
@@ -69,9 +69,9 @@ app.post("/update-cobj", async (req, res) => {
         properties: {
           // Estes nomes DEVEM ser os INTERNAL NAMES
           // das propriedades do Custom Object (***SUBSTITUIR PELO OS QUE VOCÊ CRIOU***)
-          name: customer_name,
+          customer_name: customer_name,
           status: status,
-          LFR: last_feedback_response,
+          last_feedback_response: last_feedback_response,
         },
       },
       {
