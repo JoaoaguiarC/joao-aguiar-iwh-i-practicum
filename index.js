@@ -57,9 +57,9 @@ app.get("/update-cobj", (req, res) => {
 // ------------------------------------------------------------
 app.post("/update-cobj", async (req, res) => {
   // Dados vindos do formulário (***SUBSTITUIR PELAS PROPRIEDADES QUE VOCÊ CRIOU***)
-  const name = Array.isArray(req.body.name) ? req.body.name[0] : req.body.name;
+  const customer_name = Array.isArray(req.body.name) ? req.body.name[0] : req.body.name;
   const status = Array.isArray(req.body.specie) ? req.body.specie[0] : req.body.specie;
-  const LFR = Array.isArray(req.body.age) ? req.body.age[0] : req.body.age;
+  const last_feedback_response = Array.isArray(req.body.age) ? req.body.age[0] : req.body.age;
 
   try {
     // Chamada à API do HubSpot para criar um registro
