@@ -69,9 +69,9 @@ app.post("/update-cobj", async (req, res) => {
         properties: {
           // Estes nomes DEVEM ser os INTERNAL NAMES
           // das propriedades do Custom Object (***SUBSTITUIR PELO OS QUE VOCÊ CRIOU***)
-          name: customer_name ,
-          status: status ,
-          LFR: last_feedback_response ,
+          name: customer_name,
+          status: status,
+          LFR: last_feedback_response,
         },
       },
       {
